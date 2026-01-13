@@ -14,6 +14,15 @@
 
     <h1>Get the Hint 💡 </br>&</br>Guess the word 😉</h1>
     <div id="content">
+        <audio id="wrong-sound">
+            <source src="audio/wrong.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="correct-sound">
+            <source src="audio/correct.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="won-sound">
+            <source src="audio/won.mp3" type="audio/mpeg">
+        </audio>
         <h2>LEVEL 1</h2>
         <div id="display">
             <div id="hint1"></div>
@@ -23,6 +32,7 @@
         <input type="text" id="answer" placeholder="Type your answer here"></br>
         <button id="submit" type="submit">submit</button>
         <script src="script.js"></script>
+
     </div> 
 </body>
 </html>

@@ -9,8 +9,11 @@ body {
   align-items: center;
 }
 h1{
-    color: rgb(243, 86, 157);
+    color: rgb(235, 112, 167);
     font-family:"Rubik Puddles", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
 }
 #display{
     margin-top: 2rem;
@@ -25,7 +28,7 @@ h1{
 #display div{
     font-size: 5rem;
     color:white;
-    padding: 2rem;
+    padding: 1.5rem;
     
 
 }
@@ -34,6 +37,7 @@ h1{
 }
 #answer{
     margin: 1rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
     background-color: black;
@@ -47,9 +51,11 @@ h1{
     border: none;
     color: white;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 h2{
     color:rgb(88, 231, 231);
+    padding: 0.5rem;
 }
 
 

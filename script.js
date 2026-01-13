@@ -1,5 +1,8 @@
 const submitbtn = document.getElementById("submit");
 const useranswer = document.getElementById("answer");
+const wrongSound = document.getElementById("wrong-sound");
+const correctsound = document.getElementById("correct-sound");
+const wonsound = document.getElementById("won-sound");
 
 const levels = [
   { hints: ["2️⃣", "Day"], answer: "today" },
@@ -29,7 +32,8 @@ submitbtn.addEventListener("click", () => {
   const answer = useranswer.value.trim().toLowerCase();
   const congrats = document.getElementById("congrats");
 
-  if (answer === levels[currentlevel].answer) {
+    if (answer === levels[currentlevel].answer) {
+    correctsound.play(); 
     // show message
     congrats.textContent = "🎉 Correct! Well done!";
     showConfetti();
@@ -42,14 +46,17 @@ submitbtn.addEventListener("click", () => {
       if (currentlevel < levels.length) {
         changelevel(levels[currentlevel]);
       } else {
+          wonsound.play();
           window.alert("congratulations..!🏆 You completed all levels!");
+          
           currentlevel = 0;
           changelevel(levels[currentlevel]);
       }
-    }, 2000);
+    }, 3000);
 
   } else {
-    alert("❌ Wrong answer. Try again!");
+      wrongSound.play(); // <-- plays the sound
+      document.getElementById("congrats").textContent = "❌ Wrong answer. Try again!";
   }
 });
 
