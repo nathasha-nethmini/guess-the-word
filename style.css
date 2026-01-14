@@ -5,7 +5,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column; /* stack items vertically */
-  justify-content: center; /* vertical center */
+  justify-content: center; 
   align-items: center;
 }
 h1{
@@ -18,7 +18,7 @@ h1{
 #display{
     margin-top: 2rem;
     width: 90%;
-    background-color: #4d4a4b38;
+    background-color: #4d4a4b8e;
     display: grid;
     border-radius: 2rem;
     padding:1rem;
@@ -47,11 +47,14 @@ h1{
 #submit{
     border-radius: 0.9rem;
     padding: 0.5rem;
-    background-color:rgb(154, 6, 31);
+    background-color:rgba(154, 6, 31, 0.753);
     border: none;
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
+}
+#submit:hover{
+    background-color: rgb(154, 6, 31);;
 }
 h2{
     color:rgb(88, 231, 231);
@@ -92,4 +95,13 @@ h2{
 #congrats{
     color: white;
     padding: 1rem;
+}
+#home{
+    background-color: rgba(255, 255, 0, 0.727);
+    padding: 0.4rem;
+    border-radius: 0.7rem;
+    border: none;
+}
+#home:hover{
+    background-color: rgb(255, 255, 0);
 }

@@ -3,34 +3,59 @@ const useranswer = document.getElementById("answer");
 const wrongSound = document.getElementById("wrong-sound");
 const correctsound = document.getElementById("correct-sound");
 const wonsound = document.getElementById("won-sound");
+const homebtn = document.getElementById("home");
+const congrats = document.getElementById("congrats");
+const alllevels = [
+    { hints: ["2️⃣", "Day"], answer: "today" },
+    { hints: ["👂", "💍"], answer: "earring" },
+    { hints: ["💡", "🏠"], answer: "lighthouse" },
+    { hints: ["⭐", "🐟"], answer: "starfish" },
+    { hints: ["🌲", "🍎"], answer: "pineapple" },
+    { hints: ["🅱️", "4️⃣"], answer: "before" },
+    { hints: ["N", "8️⃣"], answer: "night" },
+    { hints: ["do", "🥜"], answer: "donut" },
+    { hints: ["2️⃣", "🐝"], answer: "tobe" },
+    { hints: ["🌞", "👓"], answer: "sunglass" },
+    { hints: ["❄️", "👨"], answer: "snowman" },
+    { hints: ["👂", "☎️"], answer: "earphone" },
+    { hints: ["🧺", "⚽"], answer: "basketball" },
+    { hints: ["👣", "🖨️"], answer: "footprint" },
+    { hints: ["🔥", "🏢"], answer: "firehouse" },
+    { hints: ["2️⃣", "🌃"], answer: "tonight" },
+    { hints: ["🌞", "🌻"], answer: "sunflower" },
+    { hints: ["❄️", "⚽"], answer: "snowball" },
+    { hints: ["👁️", "📱"], answer: "iphone" },
+    { hints: ["🔥", "👨"], answer: "fireman" },
+    { hints: ["🫱", "💼"], answer: "handbag" },
+    { hints: ["🌧️", "🧥"], answer: "raincoat" },
+    { hints: ["🍳", "🎂"], answer: "pancake" },
+    { hints: ["🛌", "⏰"], answer: "bedtime" },
+    { hints: ["👄", "🥢"], answer: "lipstick" },
+    { hints: ["🐄", "👦"], answer: "cowboy" },
+    
 
-const levels = [
-  { hints: ["2️⃣", "Day"], answer: "today" },
-  { hints: ["👂", "💍"], answer: "earring" },
-  { hints: ["💡", "🏠"], answer: "lighthouse" },
-  { hints: ["⭐", "🐟"], answer: "starfish" },
-  { hints: ["🌲", "🍎"], answer: "pineapple" },
-  { hints: ["🅱️", "4️⃣"], answer: "before" },
-  { hints: ["N", "8️⃣"], answer: "night" },
-  { hints: ["👁️", "🤝"], answer: "ideal" },
-  { hints: ["do", "🥜"], answer: "donut" },
-  { hints: ["2️⃣", "🐝"], answer: "tobe" }
 ];
 
 let currentlevel = 0;
-
+let wrongattempt = 0;
 function changelevel(level) {
   document.getElementById("hint1").textContent = level.hints[0];
   document.getElementById("hint2").textContent = level.hints[1];
   useranswer.value = "";
 }
-
+homebtn.addEventListener("click", () => {
+    window.location.href = "home.html";
+});
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+const levels = shuffle(alllevels).slice(0, 10);
 // Load first level
 changelevel(levels[currentlevel]);
 
 submitbtn.addEventListener("click", () => {
   const answer = useranswer.value.trim().toLowerCase();
-  const congrats = document.getElementById("congrats");
+  
 
     if (answer === levels[currentlevel].answer) {
     correctsound.play(); 
@@ -48,15 +73,33 @@ submitbtn.addEventListener("click", () => {
       } else {
           wonsound.play();
           window.alert("congratulations..!🏆 You completed all levels!");
-          
-          currentlevel = 0;
-          changelevel(levels[currentlevel]);
+          window.location.href = "home.html";
       }
-    }, 3000);
+    }, 3000); 
 
   } else {
       wrongSound.play(); // <-- plays the sound
-      document.getElementById("congrats").textContent = "❌ Wrong answer. Try again!";
+    wrongattempt++;
+        if (wrongattempt >= 3) {
+            document.getElementById("congrats").textContent = "❌ Wrong answer. correctanswer is : " + levels[currentlevel].answer;
+            wrongattempt = 0;
+            setTimeout(() => {
+            congrats.textContent = "";
+            currentlevel++;
+
+            if (currentlevel < levels.length) {
+                changelevel(levels[currentlevel]);
+            } else {
+                wonsound.play();
+                window.alert("congratulations..!🏆 You completed all levels!");
+                window.location.href = "home.html";
+            }
+            }, 3000);
+        }
+        else {
+            congrats.textContent = "❌ Wrong answer. Try again!";
+            
+        }
   }
 });
 
