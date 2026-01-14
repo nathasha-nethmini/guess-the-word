@@ -1,92 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guess the Word</title>
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg,rgb(232, 78, 104), #6a11cb, rgb(83, 83, 233));
-      color: rgb(254, 254, 254);
-      text-align: center;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.648);
-      padding: 40px;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: #090909 0.5rem 0.5rem 2rem;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      color:rgb(247, 170, 247);
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 25px;
-      opacity: 0.9;
-    }
-
-    .play-btn {
-      padding: 12px 30px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #ffcc00;
-      color: #000;
-      font-weight: bold;
-      transition: transform 0.2s, background 0.2s;
-      margin: 0.5rem;
-    }
-
-    .play-btn:hover {
-      transform: scale(1.05);
-      background: #ffd633;
-    }
-
-    footer {
-      margin-top: 25px;
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="container">
-    <h1>🎮 Guess the Word</h1>
-    <p>
-      Guess the hidden word using the given images / imojies <br>
-      Simple • Fun • Challenging
-    </p>
+    <div id="confetti-container"></div>
+    <button id="home">Home</button>
+    <h1>Get the Hint 💡 </br>Guess the word 😉</h1>
+    <div id="content">
+        <audio id="wrong-sound">
+            <source src="audio/wrong.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="correct-sound">
+            <source src="audio/correct.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="won-sound">
+            <source src="audio/won.mp3" type="audio/mpeg">
+        </audio>
+        <h2>LEVEL 1</h2>
+        <div id="display">
+            <div id="hint1"></div>
+            <div id="hint2"></div>
+        </div>
+        <div id="congrats"></div>
+        <input type="text" id="answer" placeholder="Type your answer here"></br>
+        <button id="submit" type="submit">submit</button>
+        <script src="script.js"></script>
 
-    <!-- Link to your game page -->
-    <button class="play-btn" onclick="startGame1()">Level 1</button></br>
-    <button class="play-btn" onclick="startGame2()">Level 2</button>
-
-    <footer>
-      Made with ❤️ by Nathasha Nethmini
-    </footer>
-  </div>
-
-  <script>
-    function startGame1() {
-      window.location.href = "index.html";
-    }
-  </script>
+    </div> 
 </body>
 </html>
