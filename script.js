@@ -73,7 +73,10 @@ submitbtn.addEventListener("click", () => {
       } else {
           wonsound.play();
           window.alert("congratulations..!🏆 You completed all levels!");
-          window.location.href = "home.html";
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1500);
+          
       }
     }, 3000); 
 
