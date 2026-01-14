@@ -44,7 +44,7 @@ function changelevel(level) {
   useranswer.value = "";
 }
 homebtn.addEventListener("click", () => {
-    window.location.href = "home.html";
+    window.location.href = "index.html";
 });
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
