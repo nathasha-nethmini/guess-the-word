@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="confetti-container"></div>
+    <button id="home">Home</button>
+    <h1>Get the Hint Guess the word 😉</h1>
+    <div id="content">
+        <audio id="wrong-sound">
+            <source src="audio/wrong.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="correct-sound">
+            <source src="audio/correct.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="won-sound">
+            <source src="audio/won.mp3" type="audio/mpeg">
+        </audio>
+        <h2>LEVEL 2</h2>
+        <div id="display">
+            <img id="hint-image" />
+            <button id="logic">💡</button>
+        </div>
+        <div id="congrats"></div>
+        <input type="text" id="answer" placeholder="Type your answer here"><br/>
+        <button id="submit" type="submit">submit</button>
+        <script src="script2.js"></script>
+
+    </div> 
+</body>
+</html>

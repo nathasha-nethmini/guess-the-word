@@ -17,23 +17,21 @@ h1{
 }
 #display{
     margin-top: 2rem;
-    width: 90%;
     background-color: #4d4a4b8e;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-radius: 2rem;
     padding:1rem;
-    grid-template-columns: 50% 50%;
-
-}
-#display div{
-    font-size: 5rem;
-    color:white;
-    padding: 1.5rem;
+    align-items: center;
     
 
 }
+#hint-image{
+    max-width: 50%;
+}
 #content{
-    width: fit-content;
+    max-width: 50%;
+    
 }
 #answer{
     margin: 1rem;
@@ -47,14 +45,14 @@ h1{
 #submit{
     border-radius: 0.9rem;
     padding: 0.5rem;
-    background-color:rgba(154, 6, 31, 0.771);
+    background-color:rgba(154, 6, 31, 0.852);
     border: none;
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
 }
 #submit:hover{
-    background-color:rgb(154, 6, 31);
+    background-color: rgb(154, 6, 31);;
 }
 h2{
     color:rgb(88, 231, 231);
@@ -104,4 +102,13 @@ h2{
 }
 #home:hover{
     background-color: rgb(255, 255, 0);
+}
+#logic{
+    padding: 1.2rem;
+    border-radius: 10rem;
+    background-color: rgba(0, 0, 0, 0);
+    border:none;
+}
+#logic:hover{
+    background: radial-gradient(circle,rgba(255, 255, 0, 0.721), rgba(255, 255, 0, 0.288),rgba(255, 255, 0, 0));
 }

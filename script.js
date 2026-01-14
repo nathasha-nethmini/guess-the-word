@@ -72,7 +72,7 @@ submitbtn.addEventListener("click", () => {
         changelevel(levels[currentlevel]);
       } else {
           wonsound.play();
-          window.alert("congratulations..!🏆 You completed all levels!");
+          window.alert("congratulations..!🏆 You completed level 1!");
           setTimeout(() => {
             window.location.href = "index.html";
           }, 1500);
@@ -94,7 +94,7 @@ submitbtn.addEventListener("click", () => {
                 changelevel(levels[currentlevel]);
             } else {
                 wonsound.play();
-                window.alert("congratulations..!🏆 You completed all levels!");
+                window.alert("congratulations..!🏆 You completed level 1!");
                 window.location.href = "home.html";
             }
             }, 3000);
